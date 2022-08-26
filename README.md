@@ -1,2 +1,4 @@
 # DAT108Obliger
-Obligatiske oppgaver dat108
+
+Her finnes vår løsning på obligene i DAT103 H2022
+
