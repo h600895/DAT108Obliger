@@ -1,4 +1,4 @@
 # DAT108Obliger
 
-Her finnes vår løsning på obligene i DAT103 H2022
+Her finnes vår løsning på obligene i DAT108 H2022
 
