@@ -1,9 +1,7 @@
 package oppgave2;
 
+
 import java.util.ArrayList;
-import java.util.List;
-
-
 
 public class Brett {
     private int KAPASITET;
@@ -33,7 +31,13 @@ public class Brett {
 
     @Override
     public String toString() {
+        String str = "";
+        for (int i = 0; i < this.brett.size(); i++) {
+            str += this.brett.get(i) + ", ";
 
-        return this.brett.toString();
+        }
+        return "(" + str.substring(0, str.length()-2) + ")";
     }
 }
+
+
