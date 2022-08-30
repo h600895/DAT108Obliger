@@ -10,8 +10,12 @@ public class Servitor extends Thread {
 
     @Override
     public void run() {
-        for (int i = 0; i < 10; i++) {
-            hentBurger();
+        while(true) {
+            try {
+                hentBurger();
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
             try {
                 Thread.sleep(2000);
             } catch (InterruptedException e) {
@@ -21,13 +25,7 @@ public class Servitor extends Thread {
 
     }
 
-    public void hentBurger() {
-        Hamburger burger = brett.fjern();
-        if (burger != null) {
-            System.out.println(name + "(servitør) tar av burger" + brett.toString());
-        }
-        else {
-            System.out.println(name + "(servitør) ønsker å ta hamburger, men brett tomt. Venter!");
-        }
+    public void hentBurger() throws InterruptedException {
+        brett.fjern(name);
     }
 }

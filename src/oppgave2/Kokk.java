@@ -6,8 +6,12 @@ public class Kokk extends Thread {
 
     @Override
     public void run() {
-        for (int i = 0; i < 10; i++) {
-            lagBurger();
+        while (true) {
+            try {
+                lagBurger();
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
             try {
                 Thread.sleep(2000);
             } catch (InterruptedException e) {
@@ -22,13 +26,7 @@ public class Kokk extends Thread {
         this.name = name;
     }
 
-    public void lagBurger() {
-        if (brett.leggTil(new Hamburger(1))) {
-            System.out.println(name + "(Kokk) legger til burger" + brett.toString());
-        }
-        else {
-            System.out.println(name + "(kokk) klar med hamburger, men brett fullt. Venter!");
-        }
-
+    public void lagBurger() throws InterruptedException {
+        brett.leggTil(new Hamburger(1), name);
     }
 }
