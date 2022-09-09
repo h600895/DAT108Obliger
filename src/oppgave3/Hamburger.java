@@ -1,14 +1,12 @@
-package oppgave2;
+package oppgave3;
 
 public class Hamburger {
     private int nr;
     boolean utenOst = true; //xD
 
-    public Hamburger(){
+    public Hamburger(int nr) {
+        this.nr = nr;
 
-    }
-    public void addId(int id) {
-        this.nr = id;
     }
 
     @Override

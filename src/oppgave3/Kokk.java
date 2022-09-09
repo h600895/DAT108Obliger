@@ -1,7 +1,4 @@
-package oppgave2;
-
-
-import java.util.Random;
+package oppgave3;
 
 public class Kokk extends Thread {
     String name;
@@ -12,13 +9,14 @@ public class Kokk extends Thread {
         while (true) {
             try {
                 lagBurger();
-                Random rand = new Random();
-                int randint = rand.nextInt(4000) + 2000;
-                Thread.sleep(randint);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
-
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
         }
 
     }
@@ -29,7 +27,6 @@ public class Kokk extends Thread {
     }
 
     public void lagBurger() throws InterruptedException {
-        brett.leggTil(new Hamburger(), name);
-
+        brett.leggTil(new Hamburger(1), name);
     }
 }

@@ -1,7 +1,4 @@
-package oppgave2;
-
-
-import java.util.Random;
+package oppgave3;
 
 public class Servitor extends Thread {
     Brett brett;
@@ -15,15 +12,15 @@ public class Servitor extends Thread {
     public void run() {
         while(true) {
             try {
-                Random rand = new Random();
-                int randint = rand.nextInt(4000) + 2000;
-
                 hentBurger();
-                Thread.sleep(randint);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
-
+            try {
+                Thread.sleep(2000);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
         }
 
     }
